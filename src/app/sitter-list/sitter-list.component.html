@@ -1,5 +1,10 @@
+<!-- sitter-list.component.html -->
+
+
+
 <h1>Pet Sitters</h1>
 
+<button (click)="navigateToAddSitter()">Add New Sitter</button>
 <div class="filters">
   <label>
     Specialty:
@@ -27,5 +32,6 @@
     <p>Specialty: {{ sitter.specialty }}</p>
     <p>Rating: {{ sitter.rating }}</p>
     <a [routerLink]="'/sitters/' + sitter.id">View Details</a>
+    <button (click)="navigateToModifySitter(sitter.id)">Edit</button>
   </div>
 </div>

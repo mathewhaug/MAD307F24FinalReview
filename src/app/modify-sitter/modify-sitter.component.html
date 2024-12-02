@@ -1,0 +1,42 @@
+<h2>{{ isNewSitter ? 'Add New Sitter' : 'Modify Sitter' }}</h2>
+
+<form [formGroup]="sitterForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" />
+    <div *ngIf="sitterForm.controls['name'].invalid && sitterForm.controls['name'].touched">Name is required</div>
+  </div>
+
+  <div>
+    <label for="age">Age:</label>
+    <input id="age" formControlName="age" type="number" />
+    <div *ngIf="sitterForm.controls['age'].invalid && sitterForm.controls['age'].touched">Age is required and must be at least 18</div>
+  </div>
+
+  <div>
+    <label for="experience">Experience:</label>
+    <input id="experience" formControlName="experience" type="number" />
+  </div>
+
+  <div>
+    <label for="specialty">Specialty:</label>
+    <input id="specialty" formControlName="specialty" />
+  </div>
+
+  <div>
+    <label for="rating">Rating:</label>
+    <input id="rating" formControlName="rating" type="number" min="0" max="5" />
+  </div>
+
+  <div>
+    <label for="available">Available:</label>
+    <input id="available" formControlName="available" type="checkbox" />
+  </div>
+
+  <div>
+    <label for="photo">Photo:</label>
+    <input id="photo" formControlName="photo" />
+  </div>
+
+  <button type="submit" [disabled]="sitterForm.invalid">Submit</button>
+</form>
