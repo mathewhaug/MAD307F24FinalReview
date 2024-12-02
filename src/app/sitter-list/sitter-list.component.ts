@@ -4,6 +4,20 @@ import { PetSitter} from '../Shared/pet-sitter';
 import {Router, RouterLink} from '@angular/router';
 import {NgForOf} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {
+  MatCard,
+  MatCardActions,
+  MatCardContent,
+  MatCardHeader,
+  MatCardModule,
+  MatCardTitle
+} from '@angular/material/card';
+import {MatButton, MatButtonModule} from '@angular/material/button';
+import {MatGridList, MatGridListModule, MatGridTile} from '@angular/material/grid-list';
+import {MatOption, MatOptionModule} from '@angular/material/core';
+import {MatFormField, MatSelect, MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {SitterStatusDirective} from '../directives/sitter-status.directive';
 
 @Component({
   selector: 'app-sitter-list',
@@ -12,7 +26,26 @@ import {FormsModule} from '@angular/forms';
   imports: [
     RouterLink,
     NgForOf,
-    FormsModule
+    FormsModule,
+    MatCardActions,
+    MatButton,
+    MatCardContent,
+    MatCardTitle,
+    MatCardHeader,
+    MatCard,
+    MatGridTile,
+    MatGridList,
+    MatOption,
+    MatSelect,
+    MatFormField,
+    FormsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatGridListModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatFormFieldModule,
+    SitterStatusDirective
   ],
   standalone: true
 })
