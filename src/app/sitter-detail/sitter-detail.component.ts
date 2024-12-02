@@ -8,6 +8,8 @@ import {RatingPipePipe} from '../pipes/rating-pipe.pipe';
 import {AvailabilityPipe} from '../pipes/availability-pipe.pipe';
 import {HighlightDirective} from '../directives/highlight.directive';
 import {SitterStatusDirective} from '../directives/sitter-status.directive';
+import {MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardModule} from '@angular/material/card';
+import {MatAnchor, MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-sitter-detail',
@@ -20,7 +22,14 @@ import {SitterStatusDirective} from '../directives/sitter-status.directive';
     RatingPipePipe,
 
     HighlightDirective,
-    SitterStatusDirective
+    SitterStatusDirective,
+    MatCard,
+    MatCardHeader,
+    MatCardContent,
+    MatCardActions,
+    MatAnchor,
+    MatCardModule,
+    MatButtonModule
   ],
   standalone: true
 })

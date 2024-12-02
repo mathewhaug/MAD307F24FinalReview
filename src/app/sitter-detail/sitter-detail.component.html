@@ -1,23 +1,31 @@
-<h1>Sitter Details</h1>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Sitter Details</mat-card-title>
+  </mat-card-header>
 
-<div *ngIf="sitter" class="sitter-detail">
-  <!-- Highlight the sitter's name -->
-  <h2 appHighlight>{{ sitter.name }}</h2>
+  <mat-card-content>
+    <div *ngIf="sitter" class="sitter-detail">
+      <!-- Highlight the sitter's name -->
+      <h2 appHighlight>{{ sitter.name }}</h2>
 
-  <div class="sitter-info">
+      <div class="sitter-info">
+        <p><strong>Age:</strong> {{ sitter.age | age }} years</p>
+        <p><strong>Experience:</strong> {{ sitter.experience }} years</p>
+        <p><strong>Specialty:</strong> {{ sitter.specialty }}</p>
+        <p><strong>Rating:</strong> {{ sitter.rating | ratingPipe }} stars</p>
 
-    <p><strong>Age:</strong> {{ sitter.age | age}}</p>
-    <p><strong>Experience:</strong> {{ sitter.experience }} years</p>
-    <p><strong>Specialty:</strong> {{ sitter.specialty }}</p>
-    <p><strong>Rating:</strong> {{ sitter.rating |ratingPipe}}</p>
-    <!-- Replace the avail pipe with the directive -->
-    <p><strong>Availability:</strong> <span [appSitterStatus]= "sitter.available"> </span></p>
-  </div>
+        <!-- Availability: Replace the avail pipe with the directive -->
+        <p><strong>Availability:</strong> <span [appSitterStatus]="sitter.available"></span></p>
+      </div>
 
-  <div class="sitter-photo" *ngIf="sitter.photo">
-    <p><strong>Photo:</strong></p>
-    <img [src]="sitter.photo" alt="{{ sitter.name }}'s photo" />
-  </div>
-</div>
+      <div class="sitter-photo" *ngIf="sitter.photo">
+        <p><strong>Photo:</strong></p>
+        <img [src]="sitter.photo" alt="{{ sitter.name }}'s photo" class="sitter-photo-img"/>
+      </div>
+    </div>
+  </mat-card-content>
 
-<a routerLink="/sitters" class="back-link">Back to Sitters</a>
+  <mat-card-actions>
+    <a routerLink="/sitters" mat-button class="back-link">Back to Sitters</a>
+  </mat-card-actions>
+</mat-card>
