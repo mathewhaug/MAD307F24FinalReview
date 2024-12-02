@@ -3,6 +3,9 @@ import {ActivatedRoute, RouterLink} from '@angular/router';
 import { SitterService} from '../Services/sitter.service';
 import { PetSitter} from '../Shared/pet-sitter';
 import {NgIf} from '@angular/common';
+import {AgePipe} from '../pipes/age-pipe.pipe';
+import {RatingPipePipe} from '../pipes/rating-pipe.pipe';
+import {AvailabilityPipe} from '../pipes/availability-pipe.pipe';
 
 @Component({
   selector: 'app-sitter-detail',
@@ -10,7 +13,10 @@ import {NgIf} from '@angular/common';
   styleUrls: ['./sitter-detail.component.scss'],
   imports: [
     NgIf,
-    RouterLink
+    RouterLink,
+    AgePipe,
+    RatingPipePipe,
+    AvailabilityPipe
   ],
   standalone: true
 })

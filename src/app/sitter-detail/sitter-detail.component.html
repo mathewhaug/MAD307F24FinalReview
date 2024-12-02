@@ -4,11 +4,11 @@
   <h2>{{ sitter.name }}</h2>
 
   <div class="sitter-info">
-    <p><strong>Age:</strong> {{ sitter.age }}</p>
+    <p><strong>Age:</strong> {{ sitter.age | age}}</p>
     <p><strong>Experience:</strong> {{ sitter.experience }} years</p>
     <p><strong>Specialty:</strong> {{ sitter.specialty }}</p>
-    <p><strong>Rating:</strong> {{ sitter.rating }}</p>
-    <p><strong>Availability:</strong> {{ sitter.available ? 'Available' : 'Unavailable' }}</p>
+    <p><strong>Rating:</strong> {{ sitter.rating |ratingPipe}}</p>
+    <p><strong>Availability:</strong> {{ sitter.available|availabilityPipe}}</p>
   </div>
 
   <div class="sitter-photo" *ngIf="sitter.photo">
