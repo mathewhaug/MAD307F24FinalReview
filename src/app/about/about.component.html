@@ -1,0 +1,58 @@
+<mat-card class="about-card">
+  <mat-card-header>
+    <mat-card-title class="about-title">
+      <mat-icon>info</mat-icon>
+      <span>About This Project</span>
+    </mat-card-title>
+    <mat-card-subtitle>Created by Professor Mathew Haug</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          This project was developed by <strong>Professor Mathew Haug</strong> on <strong>December 1, 2024</strong> as part of the
+          <strong>MAD 307 Final Exam Review</strong>.
+        </p>
+        <p>
+          The project serves as a comprehensive review of the course materials, showcasing key concepts of Angular and
+          Material Design. It includes a <strong>Pet Sitters Management System</strong> built using cutting-edge
+          technologies, demonstrating in both front-end and back-end practices.
+        </p>
+        <p>
+          Thank you for taking the time to explore this project. All code is designed with an emphasis on clarity,
+          maintainability, and modern best practices.
+        </p>
+
+        <p>Thank you all for the great semester, best of luck with your final exams and I will see you all next semester
+        in android.
+
+        Have a safe and relaxing winter break.</p>
+      </div>
+
+      <div class="about-image">
+        <img [src]="googlePhotosUrl" alt="Professor Mathew Haug" class="professor-photo"/>
+        <mat-card-footer>
+          <span class="footer-text">Professor Mathew Haug – MAD 307 Instructor</span>
+        </mat-card-footer>
+      </div>
+    </div>
+<br>
+    <div class="extra-content">
+      <mat-chip-set>
+        <mat-chip color="primary">Angular</mat-chip>
+        <mat-chip color="accent">Material Design</mat-chip>
+        <mat-chip color="warn">Final Exam</mat-chip>
+      </mat-chip-set>
+<br>
+      <div class="about-buttons">
+        <button mat-raised-button color="primary" (click)="goBack()">
+          <mat-icon>arrow_back</mat-icon> Go Back
+        </button>
+        <button mat-stroked-button color="accent" (click)="visitGitHub()">
+          <mat-icon>code</mat-icon> View on GitHub
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
