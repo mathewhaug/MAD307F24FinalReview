@@ -5,13 +5,31 @@ import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import { SITTERS} from '../Shared/mock-data';
 import { PetSitter} from '../Shared/pet-sitter';
 import {NgIf} from '@angular/common';
+import {MatCard, MatCardContent, MatCardHeader, MatCardModule} from '@angular/material/card';
+import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
+import {MatInput, MatInputModule} from '@angular/material/input';
+import {MatCheckbox, MatCheckboxModule} from '@angular/material/checkbox';
+import {MatButton, MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-modify-sitter',
   templateUrl: './modify-sitter.component.html',
   imports: [
     ReactiveFormsModule,
-    NgIf
+    NgIf,
+    MatCard,
+    MatCardHeader,
+    MatCardContent,
+    MatFormField,
+    MatInput,
+    MatCheckbox,
+    MatButton,
+    MatCardModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+
   ],
   styleUrls: ['./modify-sitter.component.scss']
 })

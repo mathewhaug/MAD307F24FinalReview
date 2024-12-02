@@ -1,42 +1,51 @@
-<h2>{{ isNewSitter ? 'Add New Sitter' : 'Modify Sitter' }}</h2>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ isNewSitter ? 'Add New Sitter' : 'Modify Sitter' }}</mat-card-title>
+  </mat-card-header>
 
-<form [formGroup]="sitterForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="name">Name:</label>
-    <input id="name" formControlName="name" />
-    <div *ngIf="sitterForm.controls['name'].invalid && sitterForm.controls['name'].touched">Name is required</div>
-  </div>
+  <mat-card-content>
+    <form [formGroup]="sitterForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput id="name" formControlName="name" />
+        <mat-error *ngIf="sitterForm.controls['name'].invalid && sitterForm.controls['name'].touched">
+          Name is required
+        </mat-error>
+      </mat-form-field>
 
-  <div>
-    <label for="age">Age:</label>
-    <input id="age" formControlName="age" type="number" />
-    <div *ngIf="sitterForm.controls['age'].invalid && sitterForm.controls['age'].touched">Age is required and must be at least 18</div>
-  </div>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Age</mat-label>
+        <input matInput id="age" formControlName="age" type="number" />
+        <mat-error *ngIf="sitterForm.controls['age'].invalid && sitterForm.controls['age'].touched">
+          Age is required and must be at least 18
+        </mat-error>
+      </mat-form-field>
 
-  <div>
-    <label for="experience">Experience:</label>
-    <input id="experience" formControlName="experience" type="number" />
-  </div>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Experience</mat-label>
+        <input matInput id="experience" formControlName="experience" type="number" />
+      </mat-form-field>
 
-  <div>
-    <label for="specialty">Specialty:</label>
-    <input id="specialty" formControlName="specialty" />
-  </div>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Specialty</mat-label>
+        <input matInput id="specialty" formControlName="specialty" />
+      </mat-form-field>
 
-  <div>
-    <label for="rating">Rating:</label>
-    <input id="rating" formControlName="rating" type="number" min="0" max="5" />
-  </div>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Rating</mat-label>
+        <input matInput id="rating" formControlName="rating" type="number" min="0" max="5" />
+      </mat-form-field>
 
-  <div>
-    <label for="available">Available:</label>
-    <input id="available" formControlName="available" type="checkbox" />
-  </div>
+      <mat-checkbox formControlName="available">Available</mat-checkbox>
 
-  <div>
-    <label for="photo">Photo:</label>
-    <input id="photo" formControlName="photo" />
-  </div>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Photo</mat-label>
+        <input matInput id="photo" formControlName="photo" />
+      </mat-form-field>
 
-  <button type="submit" [disabled]="sitterForm.invalid">Submit</button>
-</form>
+      <div class="form-actions">
+        <button mat-raised-button color="primary" type="submit" [disabled]="sitterForm.invalid">Submit</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
