@@ -5,6 +5,7 @@ import { provideRouter, Routes } from '@angular/router';
 import {SitterListComponent} from './app/sitter-list/sitter-list.component';
 import {SitterDetailComponent} from './app/sitter-detail/sitter-detail.component';
 import {ModifySitterComponent} from './app/modify-sitter/modify-sitter.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sitters', pathMatch: 'full' },
@@ -16,5 +17,5 @@ const routes: Routes = [
 ];
 
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(routes)],
+  providers: [provideRouter(routes), provideAnimationsAsync()],
 });

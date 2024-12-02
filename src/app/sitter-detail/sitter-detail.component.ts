@@ -6,6 +6,8 @@ import {NgIf} from '@angular/common';
 import {AgePipe} from '../pipes/age-pipe.pipe';
 import {RatingPipePipe} from '../pipes/rating-pipe.pipe';
 import {AvailabilityPipe} from '../pipes/availability-pipe.pipe';
+import {HighlightDirective} from '../directives/highlight.directive';
+import {SitterStatusDirective} from '../directives/sitter-status.directive';
 
 @Component({
   selector: 'app-sitter-detail',
@@ -16,7 +18,9 @@ import {AvailabilityPipe} from '../pipes/availability-pipe.pipe';
     RouterLink,
     AgePipe,
     RatingPipePipe,
-    AvailabilityPipe
+
+    HighlightDirective,
+    SitterStatusDirective
   ],
   standalone: true
 })
