@@ -1,0 +1,16 @@
+.filters {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.sitter-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.sitter-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 5px;
+}

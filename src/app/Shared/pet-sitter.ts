@@ -1,3 +1,4 @@
+//Interface with all needed propeties for a PetSitter
 export interface PetSitter {
   id: number;
   name: string;

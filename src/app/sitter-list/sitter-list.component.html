@@ -1,0 +1,31 @@
+<h1>Pet Sitters</h1>
+
+<div class="filters">
+  <label>
+    Specialty:
+    <select >
+      <option value="">All</option>
+      <option value="Dogs">Dogs</option>
+      <option value="Cats">Cats</option>
+      <option value="Birds">Birds</option>
+    </select>
+  </label>
+
+  <label>
+    Availability:
+    <select >
+      <option value="">All</option>
+      <option [value]="true">Available</option>
+      <option [value]="false">Unavailable</option>
+    </select>
+  </label>
+</div>
+
+<div class="sitter-list">
+  <div *ngFor="let sitter of filteredSitters" class="sitter-card">
+    <h3>{{ sitter.name }}</h3>
+    <p>Specialty: {{ sitter.specialty }}</p>
+    <p>Rating: {{ sitter.rating }}</p>
+    <a [routerLink]="'/sitters/' + sitter.id">View Details</a>
+  </div>
+</div>

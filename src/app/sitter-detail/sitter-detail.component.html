@@ -1,0 +1,12 @@
+<h1>Sitter Details</h1>
+
+<div *ngIf="sitter" class="sitter-detail">
+  <h2>{{ sitter.name }}</h2>
+  <p><strong>Age:</strong> {{ sitter.age }}</p>
+  <p><strong>Experience:</strong> {{ sitter.experience }} years</p>
+  <p><strong>Specialty:</strong> {{ sitter.specialty }}</p>
+  <p><strong>Rating:</strong> {{ sitter.rating }}</p>
+  <p><strong>Availability:</strong> {{ sitter.available ? 'Available' : 'Unavailable' }}</p>
+</div>
+
+<a routerLink="/sitters">Back to Sitters</a>
